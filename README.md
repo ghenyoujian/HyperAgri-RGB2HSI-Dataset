@@ -2,67 +2,79 @@
 
 ---
 
-## 项目简介（Overview）
+## Overview
 
-**HyperAgri-RGB2HSI** 是一个面向农业应用场景的开源高光谱数据集。  
-本数据集基于公开可用的农作物 **RGB 图像数据集**，通过自研的 **RGB → 高光谱（HSI）重建算法** 生成对应的高光谱立方体数据，从而构建统一、规范、可复用的农业多模态数据资源。
+**HyperAgri-RGB2HSI** is an open-source agricultural hyperspectral dataset.  
+This dataset is constructed from publicly available **crop RGB image datasets**, where hyperspectral image (HSI) cubes are generated using an **RGB-to-HSI reconstruction algorithm**, enabling a unified, standardized, and reusable agricultural multimodal dataset.
 
-该数据集旨在为以下研究方向提供基础数据支持：
+The dataset is designed to support research in:
 
-- 农作物病害识别与分级  
-- 杂草 / 作物目标检测与分割  
-- 高光谱重建与跨模态生成建模  
-- 精准农业中的光谱分析与智能决策  
+- Crop disease recognition and severity analysis  
+- Weed and crop object detection and segmentation  
+- Hyperspectral reconstruction and cross-modal generation  
+- Spectral analysis and decision-making in precision agriculture  
 
-> 本 GitHub 仓库仅提供数据集说明、结构与许可证信息，**实际数据文件托管于百度网盘**。
-
----
-
-## 数据集概况（Dataset Summary）
-
-| 项目 | 内容 |
-|------|------|
-| **数据集名称** | HyperAgri-RGB2HSI |
-| **原始 RGB 数据集** | DeepWeeds、Global Wheat Head Dataset 2021 (GWHD 2021) |
-| **发布日期** | 2025-12-01 |
-| **任务类型** | 图像分类、分割、目标检测、高光谱重建 |
-| **数据模态** | RGB、HSI、高光谱标注（可选） |
-| **空间分辨率** | 保持原始 RGB 图像分辨率 |
-| **光谱通道数** | 31 Bands（400–760 nm） |
-| **数据格式** | `.mat` |
-| **许可证** | CC BY 4.0（高光谱衍生部分）＋ 上游数据集各自许可证 |
+> This GitHub repository only provides dataset documentation, structure description, and license information.  
+> **The actual data files are hosted on Baidu Netdisk.**
 
 ---
 
-## 数据下载（Download）
+## Dataset Summary
 
-数据集通过 **百度网盘（Baidu Netdisk）** 提供下载：
-
-- **数据集名称**：`HyperAgri-RGB2HSI-Dataset`
-- **下载链接**：  
-  https://pan.baidu.com/s/108FijCjdtrMED6J_9UHFtQ?pwd=87y1
-- **提取码**：`87y1`
-
-下载后请在本地解压使用，建议保持原始目录结构以避免路径错误。
+| Item | Description |
+|------|-------------|
+| **Dataset Name** | HyperAgri-RGB2HSI |
+| **Upstream RGB Datasets** | DeepWeeds, Global Wheat Head Dataset 2021 (GWHD 2021) |
+| **Release Date** | 2025-12-01 |
+| **Task Types** | Image classification, segmentation, object detection, hyperspectral reconstruction |
+| **Modalities** | RGB, HSI |
+| **Spatial Resolution** | Same as original RGB images |
+| **Spectral Bands** | 31 bands (400–760 nm) |
+| **Data Format** | `.mat` |
+| **License** | CC BY 4.0 (for reconstructed HSI) + upstream licenses |
 
 ---
 
-## 目录结构（Directory Structure）
+## Download
 
-解压数据后，推荐的目录结构如下：
 
-```text
-HyperAgri-RGB2HSI/
-├─ README.md
-├─ LICENSE
-├─ deepweeds/
-│  ├─ rgb/            # 原始 RGB 图像
-│  ├─ hsi/            # 重建后的高光谱数据（.mat）
-│  └─ labels/         # 类别标签（杂草类别）
-├─ gwhd2021/
-│  ├─ rgb/            # 原始小麦穗 RGB 图像
-│  ├─ hsi/            # 重建后的高光谱数据（.mat）
-│  └─ labels/         # 检测/标注信息
-└─ metadata/
-   ├─ bands_spec.json # 光谱波段定义
-   └─ splits.json     # 数据划分信息（可选）
+The dataset is available via **Baidu Netdisk**:
+
+- **Dataset Name**: `HyperAgri-RGB2HSI-Dataset`  
+- **Download Link**:  
+  https://pan.baidu.com/s/108FijCjdtrMED6J_9UHFtQ?pwd=87y1  
+- **Access Code**: `87y1`
+
+After downloading, please extract the archive locally and keep the original directory structure to avoid potential path or indexing issues.
+
+---
+
+## Directory Structure
+
+The directory structure of this dataset **follows the original RGB datasets exactly**,  
+with reconstructed hyperspectral `.mat` files added to the same directories as the corresponding RGB images.
+
+In other words:
+- Original RGB images remain unchanged  
+- Each RGB image has a corresponding HSI `.mat` file stored in the same directory  
+
+---
+
+## Upstream Datasets and Licenses
+
+The hyperspectral data in this dataset are reconstructed from the following publicly available RGB datasets.  
+**Each upstream dataset retains its original license and usage restrictions**.
+
+1. **DeepWeeds**
+   - Description: An in-field weed recognition dataset collected in Australia, containing 8 weed classes and 17,509 RGB images  
+   - Original purpose: Weed classification and detection  
+   - License: Creative Commons Attribution 4.0 (CC BY 4.0)  
+   - Source: https://github.com/AlexOlsen/DeepWeeds  
+
+2. **Global Wheat Head Dataset 2021 (GWHD 2021)**
+   - Description: A multi-country, multi-scenario wheat head detection dataset  
+   - Original purpose: Wheat head object detection  
+   - License: Creative Commons Attribution 4.0 (CC BY 4.0)  
+   - Source: https://www.kaggle.com/datasets/vbookshelf/global-wheat-head-dataset-2021  
+
+---
