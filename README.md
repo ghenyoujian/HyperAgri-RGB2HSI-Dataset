@@ -16,7 +16,7 @@ The dataset is designed to support research in:
 
 > This GitHub repository only provides dataset documentation, structure description, and license information.  
 > **The actual data files are hosted on Baidu Netdisk.**
-<img width="300" height="225" alt="image" src="https://github.com/user-attachments/assets/b86b50fb-a895-4806-b444-a503baf47f34" />
+<img width="350" height="245" alt="image" src="https://github.com/user-attachments/assets/b86b50fb-a895-4806-b444-a503baf47f34" />
 <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/9e05bcb9-8445-489a-abd7-296c413f9b48" />
 
 ---
